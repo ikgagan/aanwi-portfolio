@@ -36,7 +36,7 @@ const Home = () => {
           className="home-flex-container"
         >
           {/* Profile Image */}
-          <motion.div variants={itemAnimation} className="profile-container">
+          <motion.div variants={itemAnimation} className="profile-container" style={{ flex: "0 0 auto" }}>
             <div className="profile-image">
               <div className="profile-gradient">
                 <div className="profile-inner">
@@ -54,7 +54,7 @@ const Home = () => {
           </motion.div>
           
           {/* Text Content */}
-          <motion.div variants={itemAnimation} className="text-content">
+          <motion.div variants={itemAnimation} className="text-content" style={{ flex: "1 1 auto" }}>
             <motion.h1 variants={itemAnimation} className="heading">
               Aanwi Tarihalkar
             </motion.h1>
@@ -64,13 +64,7 @@ const Home = () => {
             </motion.h2>
             
             <motion.p variants={itemAnimation} className="paragraph">
-              Data Analyst with 3+ years of experience in predictive modeling, data visualization, and automation. 
-              Proficient in SQL, Python, Power BI, Tableau, and cloud platforms like AWS and Snowflake. 
-              At Capgemini, led app migration saving $150K annually, optimized reporting with Power BI and DAX, 
-              and improved SQL query efficiency for faster insights. Expertise in ETL, statistical modeling, 
-              and A/B testing, driving data-backed decisions. MS in Data Science from NJIT, passionate about 
-              transforming data into actionable strategies. Seeking opportunities to apply analytical and 
-              business intelligence skills to solve complex challenges.
+              Data Analyst with 3+ years of experience in predictive modeling, data visualization, and automation. Proficient in SQL, Python, Power BI, Tableau, and cloud platforms like AWS and Snowflake. At Capgemini, led app migration saving $150K annually, optimized reporting with Power BI and DAX, and improved SQL query efficiency for faster insights. Expertise in ETL, statistical modeling, and A/B testing, driving data-backed decisions. MS in Data Science from NJIT, passionate about transforming data into actionable strategies. Seeking opportunities to apply analytical and business intelligence skills to solve complex challenges.
             </motion.p>
             
             <motion.div variants={itemAnimation} className="button-container">

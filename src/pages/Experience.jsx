@@ -4,10 +4,10 @@ import { FaBriefcase } from 'react-icons/fa';
 const Experience = () => {
   const experiences = [
     {
+      title: 'Senior Analyst',
       company: 'Capgemini',
       location: 'Mumbai, India',
       period: '06/2021 – 12/2022',
-      title: 'Senior Analyst',
       responsibilities: [
         'Managed UAT for multiple software releases, creating detailed test plans and collaborating closely with business teams to reduce post-launch issues',
         'Led the migration of on-prem applications to AWS (EC2, S3 and RDS), reducing infrastructure costs by $150K annually and speeding up deployments',
@@ -17,10 +17,10 @@ const Experience = () => {
       ]
     },
     {
+      title: 'Analyst',
       company: 'Capgemini',
       location: 'Mumbai, India',
-      period: 'Prior position',
-      title: 'Analyst',
+      period: '01/2021 – 06/2021',
       responsibilities: [
         'Optimized SQL queries using joins, CTEs, stored procedures & indexing, improving query performance and enabling real-time business intelligence',
         'Streamlined data extraction and cleaning for 60+ reports using Excel VBA, reducing ad-hoc report time and improving consistency by 40%',
@@ -31,10 +31,10 @@ const Experience = () => {
       ]
     },
     {
+      title: 'Data Analyst',
       company: 'N M Automation & Control Pvt. Ltd.',
       location: 'Mumbai, India',
       period: '03/2019 – 05/2021',
-      title: 'Data Analyst',
       responsibilities: [
         'Optimized Snowflake warehousing for industrial data using auto-scaling, clustering, partitioning, and dbt transformations to improve performance',
         'Designed ETL pipelines with SSIS to integrate real-time equipment data, streamlining ingestion and transformation, cutting processing time by 22%',
@@ -58,28 +58,30 @@ const Experience = () => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
-      opacity: 1,
       y: 0,
-      transition: { duration: 0.6 }
+      opacity: 1,
+      transition: { duration: 0.5 }
     }
   };
 
   return (
-    <div className="min-h-screen pt-16 md:pt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <div className="section">
+      <div className="container">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
+          style={{ textAlign: "center", marginBottom: "4rem" }}
         >
-          <h1 className="section-heading">
-            Professional <span className="text-indigo-600 dark:text-indigo-400">Experience</span>
+          <h1 className="section-title" style={{ margin: "0 auto 2rem" }}>
+            Work Experience
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            My career journey in data analytics, visualization, and business intelligence.
+          <p style={{ fontSize: "1.125rem", color: "var(--gray-600)", maxWidth: "800px", margin: "0 auto", lineHeight: "1.7" }}>
+            My professional journey as a Data Analyst has equipped me with expertise in data visualization, 
+            ETL processes, and translating complex data into actionable business insights.
           </p>
         </motion.div>
 
@@ -87,52 +89,25 @@ const Experience = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative mx-auto"
         >
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 gradient-bg"></div>
-          
-          {experiences.map((exp, index) => (
+          {experiences.map((experience, index) => (
             <motion.div
-              key={`${exp.company}-${exp.title}`}
+              key={`${experience.company}-${experience.title}`}
               variants={itemVariants}
-              className={`mb-12 md:mb-24 relative md:w-1/2 ${
-                index % 2 === 0 ? 'md:left-0 md:pr-12' : 'md:left-1/2 md:pl-12'
-              }`}
+              className="timeline-card"
             >
-              {/* Timeline dot for desktop */}
-              <div className="hidden md:block absolute right-0 md:right-auto md:left-full h-6 w-6 rounded-full gradient-bg transform md:translate-x-[-50%] md:translate-y-[32px] z-10">
-                <div className="h-4 w-4 rounded-full bg-white dark:bg-gray-800 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="timeline-header">
+                <div>
+                  <h3 className="timeline-title">{experience.title}</h3>
+                  <h4 className="timeline-subtitle">{experience.company} | {experience.location}</h4>
+                </div>
+                <span className="timeline-date">{experience.period}</span>
               </div>
               
-              <div className="glass card-hover rounded-xl shadow-md p-6 md:p-8">
-                <div className="flex items-center mb-4">
-                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-full mr-4">
-                    <FaBriefcase className="text-xl text-indigo-600 dark:text-indigo-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
-                    <p className="text-lg font-medium text-indigo-600 dark:text-indigo-400">{exp.company}</p>
-                  </div>
-                </div>
-                
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-400 mb-2">
-                    <span className="bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">
-                      {exp.location}
-                    </span>
-                    <span className="gradient-bg text-white px-3 py-1 rounded-full">
-                      {exp.period}
-                    </span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-2">
-                  {exp.responsibilities.map((responsibility, idx) => (
-                    <li key={idx} className="text-gray-700 dark:text-gray-300 flex items-start">
-                      <span className="inline-block h-1.5 w-1.5 bg-indigo-600 dark:bg-indigo-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                      <span>{responsibility}</span>
-                    </li>
+              <div className="timeline-content">
+                <ul>
+                  {experience.responsibilities.map((responsibility, respIndex) => (
+                    <li key={respIndex}>{responsibility}</li>
                   ))}
                 </ul>
               </div>

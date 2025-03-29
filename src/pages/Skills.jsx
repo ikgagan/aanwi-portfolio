@@ -1,17 +1,27 @@
 import { motion } from 'framer-motion';
-import { FaDatabase, FaCode, FaTools, FaCloud, FaChartBar, FaProjectDiagram } from 'react-icons/fa';
+import { FaDatabase, FaCode, FaTools, FaCloud, FaChartBar, FaProjectDiagram, FaTable, FaFileCode, FaDesktop } from 'react-icons/fa';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: 'Databases',
       icon: <FaDatabase size={36} />,
-      skills: ['SQL (MS SQL Server, MySQL, Oracle, PostgreSQL)']
+      skills: ['MS SQL Server', 'MySQL', 'Oracle SQL', 'PostgreSQL']
     },
     {
       title: 'Programming',
       icon: <FaCode size={36} />,
-      skills: ['Python (Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Plotly)', 'R', 'SAS']
+      skills: ['Python', 'R', 'SAS']
+    },
+    {
+      title: 'Python Libraries',
+      icon: <FaFileCode size={36} />,
+      skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn', 'Plotly']
+    },
+    {
+      title: 'R Libraries',
+      icon: <FaFileCode size={36} />,
+      skills: ['Tidyverse', 'ggplot2', 'dplyr', 'tidyr', 'stringr', 'lubridate']
     },
     {
       title: 'Business Tools',
@@ -19,20 +29,30 @@ const Skills = () => {
       skills: ['Salesforce', 'HubSpot', 'Slack', 'Google Analytics', 'Microsoft Office Suite (Word, Access, Excel, PowerPoint, Outlook)', 'Smartsheet']
     },
     {
-      title: 'Project Management & Cloud',
+      title: 'Cloud',
       icon: <FaCloud size={36} />,
-      skills: ['Jira', 'Confluence', 'Kanban', 'Agile', 'SDLC', 'Scrum', 'SAP', 'Docker', 'Git', 'DevOps', 'Salesforce', 'AWS', 'Azure', 'GCP']
+      skills: ['SAP', 'Docker', 'Git', 'DevOps', 'Salesforce', 'AWS', 'Azure', 'GCP']
     },
     {
       title: 'Data Management',
       icon: <FaChartBar size={36} />,
-      skills: ['Tableau', 'Power BI', 'MS Excel (VLOOKUP, XLOOKUP, Pivot Tables, Macros, VBA)', 'Looker', 'Google Sheets', 'Google BigQuery']
+      skills: ['Tableau', 'Power BI', 'Looker', 'Google Sheets', 'Google BigQuery']
     },
     {
       title: 'Data Engineering',
       icon: <FaProjectDiagram size={36} />,
       skills: ['Snowflake', 'Apache Hadoop', 'Apache Spark', 'ETL', 'Alteryx', 'Data Build Tool (dbt)', 'Databricks']
-    }
+    },
+    {
+      title: 'Project Management',
+      icon: <FaDesktop size={36} />,
+      skills: ['Jira', 'Confluence', 'Kanban', 'Agile', 'SDLC', 'Scrum']
+    },
+    {
+      title: 'MS Excel',
+      icon: <FaTable size={36} />,
+      skills: ['VLOOKUP', 'XLOOKUP', 'Pivot Tables', 'Macros', 'VBA']
+    },
   ];
 
   const containerVariants = {
@@ -79,7 +99,7 @@ const Skills = () => {
           animate="visible"
           style={{ 
             display: "grid", 
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", 
+            gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))", 
             gap: "2rem" 
           }}
         >
