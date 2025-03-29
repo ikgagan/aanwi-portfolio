@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   const location = useLocation();
-
+  
   return (
     <div className="app-container">
       {/* Background elements */}
